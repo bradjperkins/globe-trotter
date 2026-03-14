@@ -25,10 +25,7 @@ function dismiss(): void {
 }
 */
 
-/** Pro banner disabled. Remove the early return below to re-enable. */
-export function showProBanner(_container: HTMLElement): void {
-  return; // Banner disabled — remove this line to re-enable
-
+export function showProBanner(container: HTMLElement): void {
   if (bannerEl) return;
   if (window.self !== window.top) return;
 
@@ -50,11 +47,11 @@ export function showProBanner(_container: HTMLElement): void {
   });
   */
 
-  const header = _container.querySelector('.header');
+  const header = container.querySelector('.header');
   if (header) {
     header.before(banner);
   } else {
-    _container.prepend(banner);
+    container.prepend(banner);
   }
 
   bannerEl = banner;
